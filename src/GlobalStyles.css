@@ -1,0 +1,392 @@
+/* **********  Global styles   ********** */
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+
+:root {
+  --gradient-theme: linear-gradient(to right, #d6bd12, #c7b95b);
+  --gradient-list: linear-gradient(to right, #33322ff0, #33322f);
+  --border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  --theme: #d6bd12;
+  --list: #33322f;
+  --task: #41403d;
+  --light-grey: #bcbcb9;
+  --dak-grey: #5e5d5a;
+  --danger: #e80c4e;
+  --success: #0d9672f5;
+  --info: #0d94cef5;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Gotu', sans-serif;
+  background-image: var(--gradient-theme);
+}
+
+a {
+  text-decoration: none;
+  transition: all ease 0.4s;
+  color: var(--light-grey);
+}
+
+li,
+ol {
+  list-style: none;
+}
+
+.container {
+  display: flex;
+  max-width: 110em;
+  width: 90%;
+  margin: 4em auto;
+}
+
+.flex-row {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.App {
+  background-color: var(--list);
+  width: 100%;
+  min-height: 85vh;
+  height: auto;
+  max-width: 68em;
+  padding: 3.2em;
+  margin: 6em auto;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.85);
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 1em 2em;
+  background-color: var(--light-grey);
+  color: var(--dak-grey);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  outline-style: none;
+  transition: all ease-in-out 0.4s;
+  font-weight: bold;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.85);
+}
+
+.alert {
+  padding: 1em;
+  background-color: var(--light-grey);
+  color: #fff;
+  font-size: 1.45em;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.85);
+  margin: auto;
+  margin-bottom: .45em;
+  max-width: 25em;
+
+}
+
+.alert-danger {
+  background-color: var(--danger);
+}
+
+.alert-success {
+  background-color: var(--success);
+}
+
+.alert-info {
+  background-color: var(--info);
+}
+
+.alert .info-icon {
+  color: #fff;
+  margin: 0 .4em
+}
+
+.badge {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.85);
+  padding: 0.25em;
+  border-radius: 2.5px;
+  /* background-color: rgba(255, 255, 255, 0.35); */
+  background-color: var(--theme);
+  color: #333;
+  list-style: inherit;
+}
+
+.badge.badge-secondary {
+  background-color: var(--light-grey);
+  color: var(--dak-grey)
+}
+
+.badge.badge-warning {
+  background-color: var(--theme);
+  color: var(--dak-grey);
+}
+
+.badge.badge-danger {
+  background-color: #d61246;
+  color: #333;
+}
+
+button {
+  display: block;
+  background-color: var(--task);
+  color: var(--light-grey);
+  width: 100%;
+}
+
+/* **********  Navbar   ********** */
+nav .flex-column h1.title {
+  text-align: center;
+  color: var(--light-grey);
+  font-size: 3.2em;
+}
+
+nav ul {
+  justify-content: space-between;
+
+}
+
+nav ul li {
+  display: inline-block;
+  font-size: 1.4em;
+  padding: .25em 1em;
+  border-radius: 5px;
+  transition: all ease-in-out .4s;
+}
+
+nav ul li:hover {
+  background-color: var(--task);
+}
+
+/* **********  Taskform   ********** */
+
+form {
+  text-align: center;
+  max-width: 110em;
+  width: 90%;
+  margin: 4em auto;
+}
+
+form input {
+  width: 80%;
+  border: none;
+  background: transparent;
+  border-bottom: var(--border-bottom);
+  outline-style: none;
+  padding-bottom: 0.6em;
+  color: var(--light-grey);
+  font-size: 1.4em;
+}
+
+form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  background-color: transparent;
+}
+
+form input:focus {
+  background-color: transparent !important;
+}
+
+form select {
+  height: 2em;
+  width: 18%;
+  border: none;
+  border-radius: 0;
+  outline-style: none;
+  position: relative;
+  top: 0.2em;
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: var(--border-bottom);
+  margin-left: 5px;
+  font-size: 1.45em;
+}
+
+form .add-task button {
+  background-color: var(--task);
+  color: var(--light-grey);
+  margin: auto;
+  margin-top: 2em;
+  font-size: 1.2em;
+}
+
+form .add-task button:hover {
+  background-color: var(--dak-grey);
+  color: var(--light-grey);
+}
+
+form .clear-list button {
+  background-color: var(--dak-grey);
+  color: var(--light-grey);
+  font-size: 1.2em;
+  margin: 0.75em auto;
+}
+
+form .clear-list button:hover {
+  color: var(--dak-grey);
+  background-color: var(--light-grey);
+  font-size: 1.2em;
+}
+
+/***************  Component List  *****************/
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 68em;
+  margin: 2em auto;
+  font-family: 'Arial', serif;
+}
+
+.list .list-item {
+  padding: 1em 2em;
+  background-color: var(--task);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.85);
+  border-radius: 3px;
+  margin: 0.5em 0;
+  color: var(--light-grey);
+  font-size: 1.45em;
+}
+
+.list .list-item .title {
+  text-transform: initial;
+  cursor: pointer;
+}
+
+.list .list-item .title::before {
+  content: '\002B24';
+  padding-right: 0.85em;
+  font-style: normal !important;
+}
+
+.list .list-item .badge {
+  margin-left: 2.5em;
+  font-size: 0.85em;
+}
+
+.list .list-item .float-right {
+  float: right;
+}
+
+.list .list-item .float-right .icon {
+  margin: 0 0.5em;
+  cursor: pointer;
+}
+
+/************   Page About ********************/
+
+.about {
+
+  background-color: var(--task);
+  padding: 2em;
+  color: var(--light-grey);
+  text-align: center;
+}
+
+.about p {
+  font-size: 1.3em;
+  font-style: italic;
+}
+
+/***************  Component Register and Login  *****************/
+.auth form {
+  text-align: center;
+  max-width: 110em;
+  width: 90%;
+  margin: 4em auto;
+}
+
+.auth h2 {
+  text-align: center;
+  color: var(--light-grey);
+  font-size: 1.85em;
+}
+
+.auth form input {
+  width: 80%;
+  border: none;
+  background: transparent;
+  border-bottom: var(--border-bottom);
+  outline-style: none;
+  padding-bottom: 1.5em;
+  color: var(--light-grey);
+  font-size: 1.289em;
+  margin-bottom: 2.1em;
+}
+
+.auth form input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  background-color: transparent;
+}
+
+.auth form input:focus {
+  background-color: transparent !important;
+}
+
+.auth form .login-button,
+.auth form .register-button {
+  width: 80%;
+  margin: auto;
+  background-color: var(--task);
+  color: var(--light-grey);
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.auth form .login-button:hover {
+  background-color: var(--light-grey);
+  color: var(--task);
+}
+
+.auth form .register-button {
+  color: var(--light-grey);
+  background-color: var(--task);
+}
+
+.auth form .register-button:hover {
+  background-color: var(--light-grey);
+  color: var(--task);
+}
+
+
+@media screen and (max-width: 50rem) {
+  html {
+    font-size: 55%;
+  }
+
+  body {
+    background-color: var(--list);
+  }
+
+  .App {
+    max-width: 68em;
+    padding: 2em;
+    margin: 2.5em auto;
+    height: 100vh;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  form input {
+    width: 74%;
+  }
+
+  form select {
+    width: 20%;
+  }
+}
